@@ -821,7 +821,13 @@ public:
 ////////////////////////////////////////////////////////////////////////////////
 
 
-int main(int argc, char *argv[])
+#if defined(BUILD_MONOLITHIC)
+#define main ade_tutorial_05_backend_main
+#endif
+
+extern "C"
+int main(void)
+
 {
     ade::Graph graph;
 

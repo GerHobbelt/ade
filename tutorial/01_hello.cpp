@@ -7,7 +7,12 @@
 #include <iostream>
 #include <ade/graph.hpp>
 
-int main(int argc, char *argv[])
+#if defined(BUILD_MONOLITHIC)
+#define main ade_tutorial_01_hello_main
+#endif
+
+extern "C"
+int main(void)
 {
     ade::Graph graph;
     std::cout << "Emtpy graph has " << graph.nodes().size() << " nodes. A great start!" << std::endl;

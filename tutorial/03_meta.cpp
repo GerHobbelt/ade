@@ -33,7 +33,13 @@ const char* getMetadataName(ade::MetadataNameTag<MetaFloat>)
 };
 }
 
-int main(int argc, char *argv[])
+
+#if defined(BUILD_MONOLITHIC)
+#define main ade_tutorial_03_meta_main
+#endif
+
+extern "C"
+int main(void)
 {
     ade::Graph graph;
     ade::TypedGraph<tutor::MetaInt,

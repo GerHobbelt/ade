@@ -91,7 +91,14 @@ void run(ade::Graph &gsrc, int depth = 0)
     }
 }
 
-int main(int argc, char *argv[])
+
+#if defined(BUILD_MONOLITHIC)
+#define main ade_tutorial_06_hierarchy_main
+#endif
+
+extern "C"
+int main(void)
+
 {
     // First, define a graph we plan to nest
     std::shared_ptr<ade::Graph> rms(new ade::Graph);

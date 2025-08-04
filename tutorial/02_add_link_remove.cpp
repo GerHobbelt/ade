@@ -7,7 +7,12 @@
 #include <iostream>
 #include <ade/graph.hpp>
 
-int main(int argc, char *argv[])
+#if defined(BUILD_MONOLITHIC)
+#define main ade_tutorial_02_add_link_remove_main
+#endif
+
+extern "C"
+int main(void)
 {
     // Define node and edge handles before we start.
     // These objects act as smart references to ADE entities.

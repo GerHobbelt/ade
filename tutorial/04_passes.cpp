@@ -29,7 +29,14 @@ struct State
     static const char *name() {return "State";}
 };
 
-int main(int argc, char *argv[])
+
+#if defined(BUILD_MONOLITHIC)
+#define main ade_tutorial_04_passes_main
+#endif
+
+extern "C"
+int main(void)
+
 {
     // Build the following graph:
     //
