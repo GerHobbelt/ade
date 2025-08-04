@@ -154,7 +154,7 @@ public:
         ADE_ASSERT(!passName.empty());
         m_passManager.addPass(stageName, PassWrapper<T>{{stageName, passName},
                                                         *this,
-                                                        std::move(getLazyPasses(lazyPassesNames)),
+                                                        getLazyPasses(lazyPassesNames),
                                                         std::forward<T>(pass)});
     }
 
