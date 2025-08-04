@@ -112,7 +112,7 @@ int main(void)
     rms->link(foo, baz);
     rms->link(bar, baz);
 
-    // No build a supergraph using our graph
+    // Now build a supergraph using our graph
     ade::Graph super;
     TGraph tsuper(super);
 
